@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'HomepageController@index');
+Route::get('/datasets', 'DatasetController@index');
+Route::get('/dataset/create', 'DatasetController@create');
+Route::post('/dataset/store', 'DatasetController@store');
 
 Auth::routes();
 
