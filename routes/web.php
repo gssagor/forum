@@ -14,8 +14,14 @@
 Route::get('/', 'HomepageController@index');
 Route::get('/datasets', 'DatasetController@index');
 Route::get('/dataset/create', 'DatasetController@create');
-Route::post('/dataset/store', 'DatasetController@store');
+Route::post('/datasets', 'DatasetController@store');
+Route::get('/download/{file}', 'DatasetController@download');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Voyager::routes();
+});

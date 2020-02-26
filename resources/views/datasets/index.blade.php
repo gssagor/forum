@@ -13,34 +13,31 @@
                 <th scope="col">#</th>
                 <th scope="col">Dataset Name</th>
                 <th scope="col">Category</th>
+                <th scope="col">Uploaded By</th>
+                <th scope="col">Uploaded On</th>
                 <th scope="col">Download Link</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Image Data</td>
-                <td>
-                    <a class="btn btn-sm btn-primary" href="http://">Download</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Text Data</td>
-                <td>
-                    <a class="btn btn-sm btn-primary" href="http://">Download</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Jessica-bio-data</td>
-                <td>Biological Data</td>
-                <td>
-                    <a class="btn btn-sm btn-primary" href="http://">Download</a>
-                </td>
-            </tr>
+            @php
+                $counter =1;
+            @endphp
+            @foreach ($datasets as $dataset)
+                <tr>
+                    <th scope="row">{{ $counter }}</th>
+                <td>{{ $dataset->name }}</td>
+                    <td>{{ $dataset->category->name }}</td>
+                    <td>Mark</td>
+                    <td>{{ $dataset->created_at->toFormattedDateString() }}</td>
+                    <td>
+                    <a download="{{ $dataset->file }}" class="btn btn-sm btn-primary" href="/download/{{ $dataset->file }}">Download</a>
+                    </td>
+                </tr>
+                @php
+                    $counter++;
+                @endphp
+            @endforeach
+           
         </tbody>
     </table>
 </div>

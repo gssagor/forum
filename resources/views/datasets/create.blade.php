@@ -7,27 +7,28 @@
 </div>
 
 <div class="container" style="margin-bottom:150px">
-    <form>
+    <form  action="/datasets" method="post" enctype="multipart/form-data">
         @csrf
+        @method('POST')
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
         <div class="form-group">
             <label for="datasetName">Dataset Name</label>
-            <input type="text" class="form-control" id="datasetName"
-                >
+            <input type="text" class="form-control" id="datasetName" name="name" required>
         </div>
         <div class="form-group">
             <label for="inputState">Category of Dataset</label>
-            <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>Image data</option>
-                <option>Text data</option>
-                <option>Sound data</option>
-                <option>Signal data</option>
-                <option>Biological data</option>
+            <select name="category_id" id="inputState" class="form-control" required>
+                <option value="" selected>Choose...</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
             </select>
         </div>
         <fieldset class="form-control" style="margin-bottom:30px">
                 <legend style="font-size:inherit">Upload your file</legend>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file" name="dataset" required/>
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
