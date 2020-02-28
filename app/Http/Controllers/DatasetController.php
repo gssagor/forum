@@ -65,6 +65,7 @@ class DatasetController extends Controller
             $dataset = new Dataset;
             $dataset->name = $request->name;
             $dataset->category_id = $request->category_id;
+            $dataset->user_id = auth()->user()->id;
             
             $datafile =$request->file('dataset');
             $filename = time().'.'.$datafile->getClientOriginalExtension();

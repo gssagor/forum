@@ -27,7 +27,7 @@
                     <th scope="row">{{ $counter }}</th>
                 <td>{{ $dataset->name }}</td>
                     <td>{{ $dataset->category->name }}</td>
-                    <td>Mark</td>
+                    <td style="text-transform:capitalize">{{ $dataset->user->name }}</td>
                     <td>{{ $dataset->created_at->toFormattedDateString() }}</td>
                     <td>
                     <a download="{{ $dataset->file }}" class="btn btn-sm btn-primary" href="/download/{{ $dataset->file }}">Download</a>
