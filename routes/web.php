@@ -17,6 +17,12 @@ Route::get('/dataset/create', 'DatasetController@create');
 Route::post('/datasets', 'DatasetController@store');
 Route::get('/download/{file}', 'DatasetController@download');
 
+
+Route::get('/questions', 'QuestionController@index');
+Route::get('/question/create', 'QuestionController@create');
+Route::post('/question/store', 'QuestionController@store');
+Route::get('/question/{question}', 'QuestionController@show');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
