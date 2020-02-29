@@ -20,12 +20,12 @@
 
 @section('content')
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Ask Your Question</h1>
-    <p class="lead">Make best use of our great community!</p>
+    <h1 class="display-5">{{ $question->title }}</h1>
+    <p class="lead">Asked by <span style="font-style:italic">{{ $question->user->name }}</span> on {{ $question->created_at->toFormattedDateString() }}</p>
 </div>
 
-<div class="container" style="margin-bottom:150px">
-   <h2>{{ $question->title }}</h2>
+<div class="container ques-wrapper" style="margin-bottom:150px">
+   {{-- <h2>{{ $question->title }}</h2> --}}
    <div class="qus-des">
        {!! $question->description !!}
    </div>

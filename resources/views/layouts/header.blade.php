@@ -11,10 +11,16 @@
     @else
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
+                <img width="25" class="profile-image" src="/default/avatar.png" alt="">
             </a>
-
+            
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <h5 style="text-transform:capitalize" class="profile-block-padding">
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </h5>
+                <p style="color:#777" class="profile-block-padding">
+                    {{ Auth::user()->email }}
+                </p>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
