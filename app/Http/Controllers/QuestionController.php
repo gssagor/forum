@@ -70,8 +70,11 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        // return $question;
-        return view('question.show', compact('question'));
+        $relatedQuestions = Question::
+                where('category_id', '!=', $question->category->id)
+                ->where('id', '!=', $question->id)
+                ->get();
+        return view('question.show', compact('question', 'relatedQuestions'));
     }
 
     /**

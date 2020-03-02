@@ -3,7 +3,7 @@
 @section('content')
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Questions</h1>
-    <p class="lead">Find your desired dataset uploaded by community members. Please remember that <strong>StuckInAI</strong> will not be responsible for unauthorized use of dataset.</p>
+    <p class="lead">Ask questions to our huge community members. Please follow the code of conduct.</p>
 </div>
 
 <div class="container" style="margin-bottom:150px;margin-top:30px">
@@ -13,8 +13,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Category</th>
-                <th scope="col">Uploaded By</th>
-                <th scope="col">Uploaded On</th>
+                <th scope="col">Submitted By</th>
+                <th scope="col">Submitted On</th>
             </tr>
         </thead>
         <tbody>
