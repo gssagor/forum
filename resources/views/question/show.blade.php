@@ -26,5 +26,10 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        @include('laravelLikeComment::comment', ['comment_item_id' => $question->id])
+    </div>
+</div>
 
 @endsection

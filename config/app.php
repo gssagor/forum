@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        risul\LaravelLikeComment\LikeCommentServiceProvider::class,
 
         /*
          * Application Service Providers...
