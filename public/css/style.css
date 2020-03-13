@@ -1,7 +1,8 @@
 html {
     font-size: 14px;
   }
-  @media (min-width: 768px) {
+  @me
+  ia (min-width: 768px) {
     html {
       font-size: 16px;
     }
@@ -126,4 +127,7 @@ form#form-buscar {
 
 button#write-comment {
   margin-bottom: 30px;
+}  
+#menu{
+  background: #000;
 }
