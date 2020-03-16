@@ -2,9 +2,11 @@
 
 namespace App;
 
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 use Illuminate\Database\Eloquent\Model;
 
-class Dataset extends Model
+class Dataset extends Model/*  implements Searchable */
 {
     public function category()
     {
@@ -14,4 +16,15 @@ class Dataset extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // public function getSearchResult(): SearchResult
+    //  {
+    //     $url = route('blogPost.show', $this->slug);
+     
+    //      return new \Spatie\Searchable\SearchResult(
+    //         $this,
+    //         $this->title,
+    //         $url
+    //      );
+    //  }
 }

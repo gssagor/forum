@@ -13,6 +13,7 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "risul/laravel-like-comment": "^2.0",
+        "spatie/laravel-searchable": "^1.2",
         "tcg/voyager": "^1.3"
     },
     "require-dev": {

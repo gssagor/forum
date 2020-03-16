@@ -21,12 +21,14 @@ Route::get('/download/{file}', 'DatasetController@download');
 Route::get('/questions', 'QuestionController@index');
 Route::get('/question/create', 'QuestionController@create');
 Route::post('/question/store', 'QuestionController@store');
-Route::get('/question/{question}', 'QuestionController@show');
+Route::get('/question/{question}', 'QuestionController@show')->name('question.show');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::post('/search', 'SearchController@search');
 
 Route::group(['prefix' => 'backend'], function () {
     Voyager::routes();
